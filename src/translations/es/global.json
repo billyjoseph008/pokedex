@@ -1,0 +1,18 @@
+{
+    "pokemonList":{
+        "search": "Buscar",
+        "back": "Atras"
+    },
+    "details":{
+        "height": "ALTURA",
+        "weight": "PESO",
+        "statics": "ESTADISTICAS", 
+        "hp": "HP",
+        "attack": "ATAQUE",
+        "defense": "DEFENSA",
+        "speed": "VELOCIDAD",
+        "spatk": "VEL ATK",
+        "spdf": "VEL DF"
+
+    }
+}

@@ -3,9 +3,12 @@ import styled from "styled-components";
 import StaticsPanel from './StaticsPanel';
 import { useEffect, useState } from 'react';
 import { PokemonService } from '../apiServices/PokemonService';
+import { screen } from "../styles/globalStyles"
+import { useTranslation } from "react-i18next";
 
 const Details = () => {
 
+    const [t, i18n] = useTranslation("global");
     let { id } = useParams();
     const pokemonService = new PokemonService();
     const [pokemon, setPokemon] = useState();
@@ -23,8 +26,8 @@ const Details = () => {
                     <div className='text'>
                         <span>{id.length === 1 ? '#00' + id : '#0' + id}</span>
                         <h2>{pokemon.name}</h2>
-                        <h3>Height: <span>{pokemon.height}</span></h3>
-                        <h3>Weight: <span>{pokemon.weight}</span></h3>
+                        <h3>{t("details.height")}: <span>{pokemon.height}</span></h3>
+                        <h3>{t("details.weight")}: <span>{pokemon.weight}</span></h3>
                     </div>
                 </div>
                 <p>{pokemon.description}</p>
@@ -49,7 +52,7 @@ export const DetailsStyle = styled.div`
     text-decoration: none;
     display: flex;
     flex-direction: column;
-    padding: 2rem;
+    padding: 3rem 0;
     align-items: center;
     justify-content: center;
 
@@ -61,7 +64,8 @@ export const DetailsStyle = styled.div`
         display: flex;
         flex-direction: row;
         justify-content: space-around;
-
+        margin-left: -1rem;
+        margin-right: -1rem;
         & img {
             width: 10rem;
             height: 10rem;
@@ -78,4 +82,8 @@ export const DetailsStyle = styled.div`
             color: #000000;
          }
     }   
+
+    ${screen.md}{
+
+    }
 `;
