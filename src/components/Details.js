@@ -64,10 +64,9 @@ export const DetailsStyle = styled.div`
         display: flex;
         flex-direction: row;
         justify-content: space-around;
-        margin-left: -1rem;
-        margin-right: -1rem;
+
         & img {
-            width: 10rem;
+            width: 9rem;
             height: 10rem;
             object-fit: contain;
             align-items: center;

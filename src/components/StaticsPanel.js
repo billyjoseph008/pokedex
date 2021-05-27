@@ -49,10 +49,11 @@ export const StatisticsPanelStyles = styled.div`
         align-items: center;
         & h4 {
             font-weight: bold;
-            margin-right: 3rem;
+            margin-right: 1rem;
         }
     }
     
+
     .number{
         display: flex;
         justify-content: center;
@@ -71,7 +72,7 @@ export const StatisticsPanelStyles = styled.div`
         height: 20px;
         padding: 3px;
         width: 150px;
-        margin: 10px 0;         
+        margin: 8px 0;         
         border-radius: 5px;
         box-shadow: 0 1px 5px #000 inset, 0 1px 0 #444;           
     }
