@@ -16,8 +16,6 @@ por ultimo ejecutar "npm start" para tener una vista previa del proyecto.
 
 ## Construido con 🛠️
 
-_Menciona las herramientas que utilizaste para crear tu proyecto_
-
 * [React.js] - El framework web usado
 * [Axios](https://github.com/axios/axios) - Para consumir APIs
 * [React Router](https://reactrouter.com/) - Para la navegacion
