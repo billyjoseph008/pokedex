@@ -21,7 +21,7 @@ const StaticsPanel = (props) => {
             <hr className='decorationLine' />
             {statisticsData.map(stat =>
                 <div className='stat'>
-                    <h4>{t(stat.details)}</h4>
+                    <h5>{t(stat.details)}</h5>
                     <div className={`progress-bar ${stat.barColor} stripes shine`}>
                         <span style={{ width: stat.stat }}>
                             <div className='number'>{stat.stat}</div>
@@ -47,7 +47,7 @@ export const StatisticsPanelStyles = styled.div`
         display: flex;
         justify-content: space-between;
         align-items: center;
-        & h4 {
+        & h5 {
             font-weight: bold;
             margin-right: 1rem;
         }

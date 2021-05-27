@@ -66,11 +66,12 @@ export const DetailsStyle = styled.div`
         justify-content: space-around;
 
         & img {
-            width: 9rem;
-            height: 10rem;
+            width: 7rem;
+            height: 9rem;
             object-fit: contain;
             align-items: center;
             justify-content: center;
+            margin: 0 15px;
         }
     }
 
