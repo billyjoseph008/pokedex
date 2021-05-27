@@ -20,7 +20,9 @@ _Menciona las herramientas que utilizaste para crear tu proyecto_
 
 * [React.js] - El framework web usado
 * [Axios](https://github.com/axios/axios) - Para consumir APIs
-* [ROME](https://rometools.github.io/rome/) - Usado para generar RSS
+* [React Router](https://reactrouter.com/) - Para la navegacion
+
+y algunos otros paquetes y librerias.
 
 ## Autores ✒️
 
