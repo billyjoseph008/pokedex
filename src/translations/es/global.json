@@ -1,13 +1,15 @@
 {
     "pokemonList":{
         "search": "Buscar",
-        "back": "Atras"
+        "back": "Atras",
+        "nextPage": "Siguiente página",
+        "lastPage": "Página anterior"
     },
     "details":{
         "height": "ALTURA",
         "weight": "PESO",
-        "statics": "ESTADISTICAS", 
-        "hp": "HP",
+        "statistics": "ESTADISTICAS", 
+        "hp": "PV",
         "attack": "ATAQUE",
         "defense": "DEFENSA",
         "speed": "VELOCIDAD",

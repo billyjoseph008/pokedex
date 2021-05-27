@@ -27,6 +27,11 @@ export const Card = styled(Link)`
     width: 5rem;
     height: 5.2rem;
     margin: 0.5rem;
+    transition: 0.7s;
+    :hover{
+        -webkit-transform:scale(1.2);
+        transform:scale(1.2);
+    }
 
     img{
         width: 2.5rem;

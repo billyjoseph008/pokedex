@@ -5,75 +5,37 @@ import { useTranslation } from "react-i18next";
 const StaticsPanel = (props) => {
 
     const [t, i18n] = useTranslation("global");
+    const statisticsData = [
+        { details: "details.hp", stat: props.hp, barColor: "blue" },
+        { details: "details.attack", stat: props.attack, barColor: "orange" },
+        { details: "details.defense", stat: props.defense, barColor: "green" },
+        { details: "details.speed", stat: props.speed, barColor: "blue" },
+        { details: "details.spatk", stat: props.spatk, barColor: "orange" },
+        { details: "details.spdf", stat: props.spdef, barColor: "green" }
+    ]
 
     return (
-        <StaticsPanelStyles>
+        <StatisticsPanelStyles>
 
-            <h3>{t("details.statics")}</h3>
+            <h3>{t("details.statistics")}</h3>
             <hr className='decorationLine' />
-
-            <div className='stat'>
-                <h4>{t("details.hp")}</h4>
-                <div className="progress-bar blue stripes shine">
-                    <span style={{ width: props.hp }}>
-                        <div className='number'>{props.hp}</div>
-                    </span>
+            {statisticsData.map(stat =>
+                <div className='stat'>
+                    <h4>{t(stat.details)}</h4>
+                    <div className={`progress-bar ${stat.barColor} stripes shine`}>
+                        <span style={{ width: stat.stat }}>
+                            <div className='number'>{stat.stat}</div>
+                        </span>
+                    </div>
                 </div>
-            </div>
-
-            <div className='stat'>
-                <h4>{t("details.attack")}</h4>
-                <div className="progress-bar orange stripes shine">
-                    <span style={{ width: props.attack }}>
-                        <div className='number'>{props.attack}</div>
-                    </span>
-                </div>
-            </div>
-
-            <div className='stat'>
-                <h4>{t("details.defense")}</h4>
-                <div className="progress-bar blue stripes shine">
-                    <span style={{ width: props.defense }}>
-                        <div className='number'>{props.defense}</div>
-                    </span>
-                </div>
-            </div>
-
-            <div className='stat'>
-                <h4>{t("details.speed")}</h4>
-                <div className="progress-bar green stripes shine">
-                    <span style={{ width: props.speed }}>
-                        <div className='number'>{props.speed}</div>
-                    </span>
-                </div>
-            </div>
-
-            <div className='stat'>
-                <h4>{t("details.spatk")}</h4>
-                <div className="progress-bar orange stripes shine">
-                    <span style={{ width: props.spatk }}>
-                        <div className='number'>{props.spatk}</div>
-                    </span>
-                </div>
-            </div>
-
-            <div className='stat'>
-
-                <h4>{t("details.spdf")}</h4>
-                <div className="progress-bar blue stripes shine">
-                    <span style={{ width: props.spdef }}>
-                        <div className='number'>{props.spdef}</div>
-                    </span>
-                </div>
-            </div>
-
-        </StaticsPanelStyles>
+            )}
+        </StatisticsPanelStyles>
     )
 }
 
 export default StaticsPanel;
 
-export const StaticsPanelStyles = styled.div`
+export const StatisticsPanelStyles = styled.div`
 
     margin: 3rem 0;
 
@@ -90,7 +52,7 @@ export const StaticsPanelStyles = styled.div`
             margin-right: 3rem;
         }
     }
-
+    
     .number{
         display: flex;
         justify-content: center;

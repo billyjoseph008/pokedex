@@ -26,8 +26,8 @@ const Details = () => {
                     <div className='text'>
                         <span>{id.length === 1 ? '#00' + id : '#0' + id}</span>
                         <h2>{pokemon.name}</h2>
-                        <h3>{t("details.height")}: <span>{pokemon.height}</span></h3>
-                        <h3>{t("details.weight")}: <span>{pokemon.weight}</span></h3>
+                        <h3>{t("details.height")}: <span>{pokemon.height + " m"}</span></h3>
+                        <h3>{t("details.weight")}: <span>{pokemon.weight + " kg"}</span></h3>
                     </div>
                 </div>
                 <p>{pokemon.description}</p>

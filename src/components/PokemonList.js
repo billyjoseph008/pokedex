@@ -8,14 +8,23 @@ import { screen } from "../styles/globalStyles"
 const PokemonList = () => {
 
     const [t, i18n] = useTranslation("global");
-    const pokemonService = new PokemonService();
+
     const [pokemons, setPokemons] = useState([]);
+    const pokemonService = new PokemonService();
     const [searchTerm, setSearchTerm] = useState('');
+    const [pagination, setPagination] = useState(0);
+    const [paginationNumber, setPaginationNumber] = useState(1);
 
     useEffect(() => {
-        pokemonService.getAllPokemons().then((data) => generatePokemons(data.results));
 
-    }, [])
+        setPokemons([]);
+        if (pagination > 0) {
+            pokemonService.getAnotherPokemons(pagination).then((data) => generatePokemons(data.results));
+        } else {
+            pokemonService.getAllPokemons().then((data) => generatePokemons(data.results));
+        }
+
+    }, [pagination])
 
     function generatePokemons(results) {
         results.forEach(async pokemon => {
@@ -26,9 +35,19 @@ const PokemonList = () => {
         })
     }
 
+    function nextPokemons(direction) {
+        console.log(direction);
+        if (direction === "more" && pagination >= 0) {
+            setPagination(pagination + 50)
+            setPaginationNumber(paginationNumber + 1)
+        } else if (direction === "less" && pagination >= 50) {
+            setPagination(pagination - 50)
+            setPaginationNumber(paginationNumber - 1)
+        }
+    }
+
     return (
         <div>
-
             <Grid>
                 <div className='search_box'>
                     <input type="text" placeholder={t("pokemonList.search")} className='bar' onChange={(e) => setSearchTerm(e.target.value)} />
@@ -47,7 +66,33 @@ const PokemonList = () => {
                         link={pokemon.id}
                     />
                 )}
+
             </Grid>
+
+            <Pagination>
+                <button
+                    className="navButton"
+                    onClick={() => nextPokemons("less")}>
+                    {t("pokemonList.lastPage")}
+                </button>
+                <div>
+                    <span className="paginationNumber">
+                        {paginationNumber > 1 ? paginationNumber - 1 : null}
+                    </span>
+                    <span className="paginationNumber actualNumber">
+                        {paginationNumber}
+                    </span>
+                    <span className="paginationNumber">
+                        {paginationNumber + 1}
+                    </span>
+                </div>
+                <button
+                    className="navButton"
+                    onClick={() => nextPokemons("more")}>
+                    {t("pokemonList.nextPage")}
+                </button>
+            </Pagination>
+
         </div>
 
     )
@@ -88,6 +133,47 @@ export const Grid = styled.div`
         padding: 1rem 3rem;
         .search_box {
             padding: 0 3.5rem;
+        }
+    }
+`
+
+const Pagination = styled.div`
+
+    display: flex;
+    height: 2rem;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    margin: 3rem 0;
+
+    & .navButton{
+        width: 30%;
+        height: 1.5rem;
+        border: black solid black;
+        background-color: blue;
+        color: white;
+        box-shadow: 2px 2px 5px #999;
+        border-radius: 0.5rem;
+        font-size: 10px;
+    }
+
+    .paginationNumber{
+        margin: 1rem;
+        font-weight: 100;
+        color: blue;
+
+    }
+
+    .actualNumber{
+        font-weight: bold;
+        font-size: 25px;
+    }
+
+    ${screen.md}{
+        & .navButton{
+            width: 15%;
+            height: 2rem;
+            font-size: 15px;
         }
     }
 `

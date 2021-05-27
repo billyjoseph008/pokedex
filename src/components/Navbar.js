@@ -16,11 +16,11 @@ const Navbar = () => {
             {
                 location.pathname == "/" ? null : <StyledLink to='/'><img src={back_arrow} />{t("pokemonList.back")}</StyledLink>
             }
-
             <img src={logo} alt="Pokemon Logo" />
             <select onChange={(e) => i18n.changeLanguage(e.target.value)}>
+                <option value="en" selected>EN</option>
                 <option value="es">ES</option>
-                <option value="en">EN</option>
+                <option value="de">DE</option>
             </select>
         </Nav>
     )
@@ -39,11 +39,18 @@ export const Nav = styled.div`
 
     }
     select{
+        background: linear-gradient(70deg, gray, white);
+        border: none;
+        font-size: 14px;
+        color: black;
+        height: 30px;
+        padding: 5px;
         display: flex;
         top: 0;
         right: 0;
         position: absolute;
         margin: 1rem;
+        border-radius: 4px;
     }
 `
 export const StyledLink = styled(Link)`

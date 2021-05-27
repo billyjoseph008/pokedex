@@ -1,18 +1,19 @@
 {
     "pokemonList":{
         "search": "Search",
-        "back": "Back"
+        "back": "Back",
+        "nextPage": "Next page",
+        "lastPage": "Preview Page"
     },
     "details":{
         "height": "HEIGHT",
         "weight": "WEIGHT",
-        "statics": "STATICS", 
+        "statistics": "STATISTICS", 
         "hp": "HP",
         "attack": "ATTACK",
         "defense": "DEFENSE",
         "speed": "SPEED",
         "spatk": "SP ATK",
         "spdf": "SP DF"
-
     }
 }

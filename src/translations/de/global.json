@@ -1,0 +1,19 @@
+{
+    "pokemonList":{
+        "search": "Suchen",
+        "back": "Zurück",
+        "nextPage": "Nächste Seite",
+        "lastPage": "Vorschauseite"
+    },
+    "details":{
+        "height": "HÖHE",
+        "weight": "GEWICHT",
+        "statistics": "STATISTIKEN", 
+        "hp": "HP",
+        "attack": "ATTACKE",
+        "defense": "VERTEIDIGUNG",
+        "speed": "GESCHWINDIGKEIT",
+        "spatk": "GWK ATK",
+        "spdf": "GWK VTD"
+    }
+}
