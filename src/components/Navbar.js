@@ -9,8 +9,7 @@ const Navbar = () => {
 
     const [t, i18n] = useTranslation("global");
     let location = useLocation();
-    console.log(location.pathname);
-
+    
     return (
         <Nav>
             {
